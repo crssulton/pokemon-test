@@ -1,0 +1,483 @@
+@import url("https://fonts.googleapis.com/css?family=Open%20Sans");
+
+$font: "Open Sans", sans-serif;
+$primary-color: #06CE1C;
+$secondary-color: #ffffff;
+$transparent-bg1: rgba(172, 241, 178, 0.3);
+$transparent-bg2: rgba(96, 211, 102, 0.6);
+$transparent-bg3: rgba(80, 172, 96, 0.8);
+$transparent-bg4: rgba(247, 247, 247, 0.9);
+$transparent-bg5: rgb(239, 241, 79);
+$transparent-bg6: rgba(103, 209, 77, 1);
+$transparent-bg7: rgb(233, 250, 235);
+
+
+body {
+  font-family: $font;
+  color: $primary-color;
+  background-color: $transparent-bg1;
+}
+
+
+.menu-nav {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 1px 4px grey;
+
+  .menu-expand {
+    display: flex;
+    flex-direction: column;
+    .icon {
+      color: $secondary-color;
+      border: 2px solid;
+      border-color: $secondary-color;
+      padding: 7px;
+      font-size: large;
+      height: 35px;
+      width: 35px;
+      border-radius: 35px;
+      margin-top: 10px;
+    }
+  }
+
+  .icon {
+    color: $secondary-color;
+  }
+
+  .active-icon {
+    color: $secondary-color;
+    font-size: large;
+    margin-top: 10px;
+  }
+}
+
+.active-menu-nav {
+  height: 160px;
+  flex-direction: column;
+}
+
+.list-card-pokemon {
+  margin: 5px;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.release-icon {
+  margin-right: 4px;
+  
+  .icon {
+    color: $secondary-color;
+    font-size: 11px;
+  }
+}
+
+.card-pokemon {
+  background-color: $transparent-bg1;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($transparent-bg1, 50%);
+  }
+
+  .header {
+    height: 20px;
+    background-color: $transparent-bg6;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    
+    .none-active {
+      height: 10px;
+      width: 10px;
+      border-radius: 10px;
+      background-color: $transparent-bg3;
+      margin-left: 5px;
+    }
+
+    .active {
+      height: 10px;
+      width: 10px;
+      border-radius: 10px;
+      background-color: $transparent-bg5;
+      margin-left: 5px;
+    }
+
+    .number {
+      margin-left: 3px;
+      font-size: 12px;
+      color: $secondary-color;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    min-height: 80px;
+    background-color: $transparent-bg4;
+    border-radius: 100%;
+  }
+
+  .title {
+    font-size: 13px;
+    color: $secondary-color;
+    background-color: $transparent-bg6;
+    padding: 5px;
+    font-weight: bold;
+    line-height: 13px;
+    margin: -5px;
+    margin-top: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.search-nav {
+  position: fixed;
+  top: 27px;
+  right: 0px;
+  left: 0px;
+  padding: 5px;
+  margin: 10px;
+  background-color: $transparent-bg6;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-width: 500px;
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    input {
+      border-color: none;
+      border: none;
+      border-radius: 10px;
+      height: 35px;
+      width: 100%;
+      padding: 10px;
+      color: $primary-color;
+      background-color: $transparent-bg4;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .icon {
+      color: $secondary-color;
+      width: 40px;
+    }
+  }
+}
+
+.pokemon-list {
+  padding-top: 58px;
+}
+
+.loading {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.pokemon-header {
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 10px;
+  font-size: 12px;
+  
+  .header {
+    background-color: $transparent-bg6;
+    color: $secondary-color;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    .title {
+      width: 100%;
+      margin-left: 5px;
+      font-weight: bold;
+    } 
+
+    .owned {
+      width: 100px;
+      text-align: right;
+      margin-right: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      img {
+        height: 14px;
+        width: 14px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.modalContainer {
+  z-index: 1000;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  .modal {
+    animation: fadeIn 500ms;
+    position: relative;
+    width: 100vw;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 20px;
+
+    .header {
+      padding: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .input-name {
+      border-radius: 10px;
+      border: 1px solid;
+      border-color: $primary-color;
+      margin: 10px;
+      height: 40px;
+      padding: 5px;
+      color: $primary-color;
+    }
+
+    .input-name:focus {
+      outline: none;
+    }
+
+    .body {
+      display: flex;
+      justify-content: space-around;
+      font-weight: bold;
+      
+      .btn-ok {
+        border: 2px solid;
+        border-color: $primary-color;
+        border-radius: 5px;
+        width: 45%;
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;;
+      }
+
+      .btn-cancel {
+        background-color: $primary-color;
+        border-radius: 5px;
+        width: 45%;
+        padding: 7px;
+        color: $secondary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+      }
+    }    
+  }
+}
+
+.btn-costume {
+  background-color: $primary-color;
+  border-radius: 5px;
+  padding: 7px;
+  color: $secondary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin: 10px;
+  font-weight: bold;
+  cursor: pointer;
+
+  span {
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .modalContainer {
+    align-items: center;
+    .modal {
+      height: auto;
+      width: 40vw;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.detail-page {
+  text-align: center;
+  background-color: $secondary-color;
+  padding-bottom: 20px;
+  height: 100vh;
+
+  .back-detail {
+    position: fixed;
+    margin: 10px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    height: 35px;
+    width: 35px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 2px grey;
+  }
+
+  .title-page {
+    color: gray;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .picture {
+    background-image: url('https://s3-ap-southeast-1.amazonaws.com/email-template.pengenbisa.com/bg2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 380px;
+    height: 170px;
+    padding-top: 60px;
+  }
+
+  .card {
+    margin-top: -10px;
+    background-color: $secondary-color;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    max-width: 380px;
+
+    .title {
+      display: flex;
+      box-shadow: 0px 0px 2px grey;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      color: gray;
+
+      .number {
+        width: 50%;
+        padding: 5px;
+      }
+      .name {
+        padding: 5px;
+        width: 50%;
+      }
+    }
+  }
+
+  .card-right {
+    width: 100%;
+    background-color: $secondary-color;
+    padding-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 380px) {
+  .detail-page {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+
+    .picture {
+      width: 380px;
+      height: 180px;
+    }
+
+    .card {
+      border-radius: 10px;
+    }
+    
+    .statistic {
+      height: 350px;
+      width: 350px;
+      border: 1px solid;
+      border-color: gray;
+      border-radius: 10px;
+      margin: 10px;
+      margin-top: 0px;
+    }
+  }
+
+  .btn-costume {
+    width: 350px;
+  }
+}
+
+.card-type {
+  border: 1px solid;
+  padding: 1px;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  span {
+    margin-left: 5px;
+  }
+}
